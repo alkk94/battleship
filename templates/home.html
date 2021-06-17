@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div id="board">
+        <div id="messageArea">
+            <table>
+                {% for i in range(table_size) %}
+                    <tr>
+                        {% for j in range(table_size) %}
+                            <td></td>
+                        {% endfor %}
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+{% endblock content %}
