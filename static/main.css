@@ -1,5 +1,4 @@
 body {
-    background-color: dodgerblue;
     background-image: url('/static/img/background.jpg');
 }
 
@@ -14,6 +13,15 @@ body {
 td {
     width: 60px;
     height: 60px;
+}
+
+td > button {
+    width: 60px;
+    height: 60px;
+    background: transparent;
     border-style: solid;
-    border-color: white;
+}
+
+td > button:hover {
+    border-color: red;
 }
