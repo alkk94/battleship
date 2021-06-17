@@ -2,11 +2,11 @@
 {% block content %}
     <div id="board">
         <div id="messageArea">
-            <table>
+            <table class="centered">
                 {% for i in range(table_size) %}
                     <tr>
                         {% for j in range(table_size) %}
-                            <td></td>
+                            <td><button></button></td>
                         {% endfor %}
                     </tr>
                 {% endfor %}
