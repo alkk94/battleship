@@ -1,16 +1,16 @@
 {% extends "layout.html" %}
 {% block content %}
     <div id="board">
-        <div id="messageArea">
-            <table class="centered">
-                {% for i in range(table_size) %}
-                    <tr>
-                        {% for j in range(table_size) %}
-                            <td id={{ ''.join([str(i), str(j)])}}><button></button></td>
-                        {% endfor %}
-                    </tr>
-                {% endfor %}
-            </table>
-        </div>
+        <table class="centered">
+            {% for i in range(1, table_size + 1) %}
+                <tr>
+                    {% for j in range(1, table_size + 1) %}
+                        <td id={{ ''.join([str(i), str(j)]) }}>
+                            <button onclick=setFieldValue({{ ''.join([str(i), str(j)]) }})></button>
+                        </td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+        </table>
     </div>
 {% endblock content %}
