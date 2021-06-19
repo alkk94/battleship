@@ -28,3 +28,7 @@ td > button {
 td > button:hover {
     border-color: red;
 }
+
+.spot-on {
+    background-color: gray;
+}
