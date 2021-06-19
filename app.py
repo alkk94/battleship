@@ -36,10 +36,30 @@ def set_game_board(game_board, numbers_battleships, legal_coordinates):
                 for i in range(0, ship_kind):
                     legal_coordinates.remove((start_coordinates[0], start_coordinates[1] + i))
                     game_board[start_coordinates[0]][start_coordinates[1] + i] = 1
+                for i in range(0, ship_kind):
+                    if (start_coordinates[0] + 1, start_coordinates[1] + i) in legal_coordinates:
+                        legal_coordinates.remove((start_coordinates[0] + 1, start_coordinates[1] + i))
+                    if (start_coordinates[0] - 1, start_coordinates[1] + i) in legal_coordinates:
+                        legal_coordinates.remove((start_coordinates[0] - 1, start_coordinates[1] + i))
+                for i in range(-1, 2):
+                    if (start_coordinates[0] + i, start_coordinates[1] - 1) in legal_coordinates:
+                        legal_coordinates.remove((start_coordinates[0] + i, start_coordinates[1] - 1))
+                    if (start_coordinates[0] + i, start_coordinates[1] + ship_kind) in legal_coordinates:
+                        legal_coordinates.remove((start_coordinates[0] + i, start_coordinates[1] + ship_kind))
             else:
                 for i in range(0, ship_kind):
                     legal_coordinates.remove((start_coordinates[0] + i, start_coordinates[1]))
                     game_board[start_coordinates[0] + i][start_coordinates[1]] = 1
+                for i in range(0, ship_kind):
+                    if (start_coordinates[0] + i, start_coordinates[1] + 1) in legal_coordinates:
+                        legal_coordinates.remove((start_coordinates[0] + i, start_coordinates[1] + 1))
+                    if (start_coordinates[0] + i, start_coordinates[1] - 1) in legal_coordinates:
+                        legal_coordinates.remove((start_coordinates[0] + i, start_coordinates[1] - 1))
+                for i in range(-1, 2):
+                    if (start_coordinates[0] - 1, start_coordinates[1] + i) in legal_coordinates:
+                        legal_coordinates.remove((start_coordinates[0] - 1, start_coordinates[1] + i))
+                    if (start_coordinates[0] + ship_kind, start_coordinates[1] + i) in legal_coordinates:
+                        legal_coordinates.remove((start_coordinates[0] + ship_kind, start_coordinates[1] + i))
 
 
 @app.route('/')
