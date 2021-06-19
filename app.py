@@ -24,6 +24,10 @@ def legal_place_for_ship(legal_coordinates, start_coordinates, ship_kind, direct
     return True
 
 
+def generate_letters(size):
+    return [chr(ord('A') + i) for i in range(size)][::-1]
+
+
 def set_game_board(game_board, numbers_battleships, legal_coordinates):
     for ship_kind, nr_ships in numbers_battleships.items():
         for _ in range(nr_ships):
@@ -75,8 +79,9 @@ def home():
     game_board = init_board(table_size)
     legal_coordinates = init_legal_coordinates(table_size)
     set_game_board(game_board, numbers_battleships, legal_coordinates)
+    letters = generate_letters(table_size)
 
-    return render_template('home.html', table_size=table_size, str=str, game_board=game_board)
+    return render_template('home.html', table_size=table_size, str=str, game_board=game_board, letters=letters)
 
 
 if __name__ == '__main__':

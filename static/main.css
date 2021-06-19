@@ -13,6 +13,10 @@ body {
 td {
     width: 60px;
     height: 60px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 150%;
+    color: lawngreen;
 }
 
 td > button {
