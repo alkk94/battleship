@@ -4,4 +4,6 @@ function setFieldValue(id, isShip) {
     } else {
         document.getElementById(id).innerHTML='miss';
     }
+    trial_counter++;
+    document.getElementById('trial-counter').innerHTML = "Number of tries " + trial_counter;
 }

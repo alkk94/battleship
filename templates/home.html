@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 {% block content %}
     <div id="board">
-        <table class="centered">
+        <table>
             {% for i in range(1, table_size + 1) %}
                 <tr>
                     <td>{{ letters[i - 1] }}</td>
@@ -14,12 +14,17 @@
                     {% endfor %}
                 </tr>
             {% endfor %}
-        <tr>
-            <td></td>
-            {% for i in range(1, table_size + 1) %}
-                <td>{{ i }}</td>
-            {% endfor %}
-        </tr>
+            <tr>
+                <td></td>
+                {% for i in range(1, table_size + 1) %}
+                    <td>{{ i }}</td>
+                {% endfor %}
+            </tr>
         </table>
+        <div id="trial-counter"></div>
     </div>
+    <script>
+        let trial_counter = 0;
+        document.getElementById('trial-counter').innerHTML = "Number of tries " + trial_counter;
+    </script>
 {% endblock content %}
