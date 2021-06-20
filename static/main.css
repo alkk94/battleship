@@ -17,7 +17,7 @@ td > button {
     background: transparent;
     border-style: solid;
     text-align: center;
-    color: lawngreen;
+    color: red;
     font-weight: bold;
 }
 
@@ -27,6 +27,10 @@ td > button:hover {
 
 .spot-on {
     background-color: gray;
+}
+
+.miss {
+    background-color: dodgerblue;
 }
 
 #board {
@@ -41,5 +45,12 @@ td > button:hover {
     height: 60px;
     font-weight: bold;
     color: orange;
+    font-size: 150%;
+}
+
+#trial-shoot {
+    height: 60px;
+    font-weight: bold;
+    color: yellow;
     font-size: 150%;
 }
